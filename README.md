@@ -43,7 +43,7 @@ OWNER to postgres;
 --------------
 ### Request examples
 
-Login: localhost:8080/api/v1/login
+####Login: localhost:8080/api/v1/login
 
 Body:
 {
@@ -53,10 +53,51 @@ Body:
 
 ![img.png](img.png)
 
-Get example: localhost:8080/api/v1/customers
+####Get customers example: localhost:8080/api/v1/customers
 
 Header: Authorization
 ![img_1.png](img_1.png)
 
 Swagger url: http://localhost:8080/swagger-ui/index.html#/
 
+![img_2.png](img_2.png)
+
+
+####Create Customer example:
+
+Body:
+{
+"title": "title",
+"createdAt": "2021-12-21@21:48:21",
+"modifiedAt": null,
+"deleted": false
+}
+
+![img_3.png](img_3.png)
+
+####Create Product example:
+
+Body:
+{
+"title": "tit",
+"description": "desc",
+"price": 0,
+"createdAt": "2021-12-21@21:50:57",
+"modifiedAt": null,
+"deleted": true
+}
+
+![img_4.png](img_4.png)
+
+#### Update product
+Body:
+
+{
+"title": "tit",
+"description": "desc",
+"price": 10,
+"createdAt": "2021-12-21@21:50:57",
+"modifiedAt": null,
+"deleted": true
+}
+![img_5.png](img_5.png)

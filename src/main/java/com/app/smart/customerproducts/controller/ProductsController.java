@@ -2,6 +2,7 @@ package com.app.smart.customerproducts.controller;
 
 import com.app.smart.customerproducts.dto.ProductsDTO;
 import com.app.smart.customerproducts.service.ProductsService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -39,6 +40,7 @@ public class ProductsController {
     }
 
     @PutMapping("/products/{productId}")
+    @SecurityRequirement(name = "Authorization")
     public ResponseEntity edit(@RequestBody ProductsDTO productsDTO, @PathVariable UUID productId) {
         productsService.editProduct(productsDTO, productId);
         return ResponseEntity.ok("OK");
@@ -51,6 +53,7 @@ public class ProductsController {
     }
 
     @DeleteMapping(value = "/products/delete/{productId}")
+    @SecurityRequirement(name = "Authorization")
     public void deleteProductById(@PathVariable UUID productId) {
         productsService.deleteProductById(productId);
     }
